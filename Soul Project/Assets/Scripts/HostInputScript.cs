@@ -5,7 +5,7 @@ using UnityEngine;
 public class HostInputScript : MonoBehaviour
 {
     [SerializeField]
-    HostController hostController;
+    Host_on_Screen_Detector host_on_Screen_Detector;
 
     internal bool isLeftScreenPressed;
     internal bool isRightScreenPressed;
@@ -43,14 +43,14 @@ public class HostInputScript : MonoBehaviour
                     {
                         leftFingerID = t.fingerId;
                         isLeftScreenPressed = true;
-                        Debug.Log("Left screen pressed");
+                        //Debug.Log("Left screen pressed");
 
                     }
                     else if(t.position.x > 2*thirdScreenWidth && rightFingerID == -1)
                     {
                         rightFingerID = t.fingerId;
                         isRightScreenPressed = true;
-                        Debug.Log("Right screen pressed");
+                        //Debug.Log("Right screen pressed");
                     }
                     break;
 
@@ -61,17 +61,16 @@ public class HostInputScript : MonoBehaviour
                     {
                         leftFingerID = -1;
                         isLeftScreenPressed = false;
-                        Debug.Log("Left screen not pressed anymore");
+                        //Debug.Log("Left screen not pressed anymore");
                     }
                     else if(t.fingerId == rightFingerID)
                     {
                         rightFingerID = -1;
                         isRightScreenPressed = false;
-                        Debug.Log("Right screen not pressed anymore");
+                        //Debug.Log("Right screen not pressed anymore");
                         
                     }
                     break;
-
             }
         }
         
